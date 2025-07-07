@@ -8,12 +8,16 @@ export class DailyService {
   @Cron('0 0 * * *')
   handleCron() {
     this.logger.log('Daily cron job executed');
-    // Add your daily task logic here
   }
 
   handleCronWithError() {
     this.logger.log('Daily cron job with error executed');
-    // Simulate an error
+    // Simulates an error
     throw new Error('Simulated error in daily cron job');
+  }
+
+  private sendEmailNotification() {
+    // Logic to send email notification
+    this.logger.log('Email notification sent');
   }
 }
