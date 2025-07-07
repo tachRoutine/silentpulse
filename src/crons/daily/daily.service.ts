@@ -5,7 +5,7 @@ import { Cron } from '@nestjs/schedule';
 export class DailyService {
   private readonly logger = new Logger(DailyService.name);
 
-  @Cron('* * * * *')
+  @Cron('0 0 * * *')
   handleCron() {
     this.logger.log('Daily cron job executed');
     // Add your daily task logic here
