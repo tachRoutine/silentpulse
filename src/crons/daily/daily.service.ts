@@ -1,9 +1,11 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { Cron } from '@nestjs/schedule';
 
 @Injectable()
 export class DailyService {
   private readonly logger = new Logger(DailyService.name);
 
+  @Cron('* * * * *')
   handleCron() {
     this.logger.log('Daily cron job executed');
     // Add your daily task logic here
